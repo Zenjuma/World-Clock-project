@@ -5,24 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>World Clock Access</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="script.js"></script>
+ 
 </head>
 <body>
-  <div >
+  <!-- <div > -->
     <h1>World Clock Access</h1>
+    
     <div class="search-container">
-    <input type="text" class="search-input" placeholder="Search a place" onclick="showAllCities()">
-    <ul id="cityList" class="dropdown hidden"></ul>
+
+    <input type="text" id="inputSearch" class="search-input" placeholder="Search a place" >
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    button class="seach-button" onclick="perfomSearch">
-    <i class="fas fa-search search-icon" onclick="dimIcon()"></i>
+    button class="seach-button">
+    <i class="fas fa-search search-icon" ></i>
+  </button> 
 
-  </button>
   </input>
-    </div>
+  
 
-    </div><br>
+
+    </div>
+    <div id="dd">
+      <div id="suggestions"></div>
+    </div>
+   
+    
+
+
+    <!-- </div> -->
+    <!-- <br> -->
+
+
     <br>
     <img id="cimg" src="media/cloud 10.jpg">
       <h2>Nairobi</h2>
@@ -75,7 +88,7 @@
         </div>
   
         </div>
-
+        <script src="script.js"></script>
     
     </body>
     </html>
