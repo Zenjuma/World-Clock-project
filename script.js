@@ -1,4 +1,4 @@
-// function performSearch() {
+
 
   const countries = [
     "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan",
@@ -59,46 +59,47 @@
   });
 
 
+  //Api stori
+  // document.getElementById("seach-button").addEventListener("click", 
+    
+    async function getinfo() {
 
-//     const query = document.getElementById('searchInput').value;
-//     alert("performing; " + query);
+  var inputSearch =document.getElementById("inputSearch").value;
+  var imgweather =document.getElementById("cimg");
+  var location =document.getElementById("location");
+  var time =document.getElementById("time");
 
-//     function dimIcon(){
-//         document.getElementById("searchIcon").classList.add("dimmed");
-//     }
-
-//     let allCities = [];
-
-// fetch('cities.json')
-//   .then(res => res.json())
-//   .then(data => {
-//     allCities = data;
-//   });
-
-// function showAllCities() {
-//   const cityList = document.getElementById('cityList');
-//   cityList.innerHTML = ''; // Clear previous
-
-//   allCities.forEach(city => {
-//     const li = document.createElement('li');
-//     li.textContent = city;
-//     li.onclick = () => {
-//       document.getElementById('searchInput').value = city;
-//       cityList.classList.add('hidden');
-//     };
-//     cityList.appendChild(li);
-//   });
-
-//   cityList.classList.remove('hidden');
-// }
-
-// // Hide when clicking outside
-// document.addEventListener('click', function (e) {
-//   if (!e.target.closest('#searchInput')) {
-//     document.getElementById('cityList').classList.add('hidden');
-//   }
-// });
+  // var location =document.getElementById("location");
+  // var time =document.getElementById("cimg");
 
 
 
-// }
+
+  const apiKey = "37a745caaac041f5a1754507251205";
+  const url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${inputSearch}`;
+
+  try{
+  
+      const response = await fetch(url);
+      const data = await response.json();
+
+      if (data.error) {
+        document.getElementById("result").innerHTML = `<p>Error: ${data.error.message}</p>`;
+      } else {
+
+
+        const lo = data.location.name + ", " + data.location.country;
+        const localtime = data.location.localtime;
+        const temp = data.current.temp_c + "°C";
+        const condition = data.current.condition.text;
+
+        location.innerHTML=lo
+        time.innerHTML=localtime
+        alert(condition,temp)
+
+
+      }
+    } catch (error) {
+      document.getElementById("result").innerHTML = `<p>Failed to fetch data. Please try again.</p>`;
+    }
+  }
