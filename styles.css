@@ -13,7 +13,7 @@ body{
 
 h1{
   text-align: center;
-  color: rgb(7, 9, 20);
+  color: rgb(5, 20, 107);
 }
 
 
@@ -112,7 +112,7 @@ h1{
 
 
 .search-button:hover {
-  color: #2196F3;
+  color: #23bceb;
 }
 
 .search-button {
@@ -137,46 +137,4 @@ h1{
   text-align: center;
   width: 90%;
   max-width: 400px;
-}
-
-
-#dd{
-
-  width: 100%;
-  background: yellow;
-  display: block;
-  margin-left: 0 auto;
-  margin-right: 0 auto;
-  padding: auto;
-  align-content: center;
-
-
-
-}
-
-
-
-#suggestions {
-  position: absolute;
-  border: 1px solid #ccc;
-  max-height: 380px;
-  overflow-y: auto;
-  left: 30%;
-  background-color: white;
-  z-index: 1000;
-  display: none;
-  box-shadow:2px 5px 3px 3px gray ;
-  padding: 10px 4px 10px 10px;
-  width: 30%; 
- 
-}
-
-.suggestion-item {
-  border-bottom: 1px solid #ccc;
-  padding: 8px;
-  cursor: pointer;
-}
-
-.suggestion-item:hover {
-  background-color: #23bceb;
 }
